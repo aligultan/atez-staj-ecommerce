@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup"; // Signup bileşeni eklendi
 import Profile from "./pages/Profile/Profile";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
@@ -21,6 +22,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} /> {/* Signup yolu eklendi */}
             <Route path="/home" element={<PrivateRoute element={Home} />} />
             <Route path="/profile" element={<PrivateRoute element={Profile} />} />
             <Route path="/about" element={<PrivateRoute element={About} />} />

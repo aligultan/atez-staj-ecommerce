@@ -67,6 +67,14 @@ const Login = () => {
         <Button type="primary" htmlType="submit" block>
           Kullanıcı Girişi
         </Button>
+        <Button 
+          type="primary" 
+          block 
+          style={{ marginTop: '10px' }} 
+          onClick={() => navigate('/signup')}
+        >
+          Kayıt Ol
+        </Button>
         <Divider style={{ borderColor: "black" }}>or Login with</Divider>
         <div className="socialLogin">
           <GoogleOutlined className="socialIcon" onClick={login} />
@@ -78,4 +86,3 @@ const Login = () => {
 };
 
 export default Login;
-

@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import axios from "axios";
 import { PRODUCTS } from "../products";
 
 export const ShopContext = createContext(null);
@@ -14,15 +15,61 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  const addToCart = (itemId) => {
+  useEffect(() => {
+    const fetchCart = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const response = await axios.get('http://127.0.0.1:3001/cart/list', {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          const items = response.data;
+          let newCartItems = getDefaultCart();
+          items.forEach(item => {
+            newCartItems[item.product_id] = (newCartItems[item.product_id] || 0) + 1;
+          });
+          setCartItems(newCartItems);
+        } catch (error) {
+          console.error("Error fetching cart items", error);
+        }
+      }
+    };
+
+    fetchCart();
+  }, []);
+
+  const addToCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
+    const token = localStorage.getItem('token');
+    try {
+      await axios.post('http://127.0.0.1:3001/cart/add', { productId: itemId }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    } catch (error) {
+      console.error("Error adding item to cart", error);
+    }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({
       ...prev,
       [itemId]: prev[itemId] > 0 ? prev[itemId] - 1 : 0,
     }));
+    const token = localStorage.getItem('token');
+    try {
+      await axios.delete('http://127.0.0.1:3001/cart/delete', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        data: { productId: itemId }
+      });
+    } catch (error) {
+      console.error("Error removing item from cart", error);
+    }
   };
 
   const updateCartItemCount = (newAmount, itemId) => {
@@ -54,5 +101,3 @@ export const ShopContextProvider = (props) => {
     </ShopContext.Provider>
   );
 };
-
-export default ShopContextProvider;
