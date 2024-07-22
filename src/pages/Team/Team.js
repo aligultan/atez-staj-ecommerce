@@ -44,7 +44,7 @@ const Team = () => {
           </div>
           <div className="team-member">
             <p className="member-name">Nilay Yaman</p>
-            <a href="https://github.com/nilayyaman" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nilaycodess" target="_blank" rel="noopener noreferrer">
               <GithubOutlined className="icon" /> github.com/nilayyaman
             </a>
             <a href="https://www.linkedin.com/in/nilay-yaman-14141825a/" target="_blank" rel="noopener noreferrer">

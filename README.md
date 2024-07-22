@@ -80,4 +80,3 @@ We welcome contributions to the Atez E-Commerce project. If you would like to co
 ## License
 
 This project is licensed under the MIT License.
-
