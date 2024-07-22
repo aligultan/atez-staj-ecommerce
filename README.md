@@ -59,15 +59,15 @@ Before you begin, ensure you have met the following requirements:
 ### Screenshots
 
 #### Login Page
-![Login Page](./screenshots/loginekrani.png)
+![Login Page](./src/screenshots/loginekrani.png)
 
 
 #### Home Page
-![Home Page](./screenshots/homeekran.png)
+![Home Page](./src/screenshots/homeekran.png)
 
 
 #### Shopping Cart
-![Shopping Cart](./screenshots/sepetsayfasi.png)
+![Shopping Cart](./src/screenshots/sepetsayfasi.png)
 
 
 ## Contributing
