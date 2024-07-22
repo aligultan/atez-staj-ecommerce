@@ -61,10 +61,7 @@ Before you begin, ensure you have met the following requirements:
 #### Login Page
 ![Login Page](./src/screenshots/loginekrani.png)
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0cca83e14265020129aeebbc5a31bd3957ed77ca
 #### Home Page
 ![Home Page](./src/screenshots/homeekran.png)
 
