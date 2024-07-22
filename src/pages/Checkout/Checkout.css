@@ -1,0 +1,57 @@
+.checkout-page {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .checkout-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .checkout-container h1 {
+    margin-bottom: 24px;
+  }
+  
+  .ant-form-item {
+    text-align: left;
+  }
+  
+  .ant-form-item-label > label {
+    color: black;
+  }
+  
+  .ant-form-item-control-input-content > input,
+  .ant-picker {
+    color: black;
+  }
+  
+  .ant-btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+  }
+  
+  .ant-btn-primary:hover,
+  .ant-btn-primary:focus {
+    background-color: #2980b9;
+    border-color: #2980b9;
+  }
+  
+  .ant-btn-default {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+  }
+  
+  .ant-btn-default:hover,
+  .ant-btn-default:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  

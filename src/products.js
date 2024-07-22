@@ -50,7 +50,7 @@ export const PRODUCTS = [
   },
   {
     id: 7,
-    productName: "AUTO SERVICE SHIRT by GOLF WANG",
+    productName: "Redbull T-Shirt",
     price: 120.0,
     productImage: product7,
   },
